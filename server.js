@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('.'));
 app.use(session({
   store: new PgSession({ pool, createTableIfMissing: true }),
   secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
