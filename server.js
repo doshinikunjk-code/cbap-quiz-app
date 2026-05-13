@@ -10,6 +10,7 @@ dotenv.config();
 await seed();
 
 const app = express();
+app.set('trust proxy', 1);
 const PgSession = pgSession(session);
 const PORT = process.env.PORT || 3000;
 
